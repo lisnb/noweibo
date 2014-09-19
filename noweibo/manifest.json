@@ -1,0 +1,31 @@
+{
+    "name": "No weibo",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Hide the weibo's navigation bar",
+    "page_action": {
+        "default_icon": {
+            "19": "icons/noweibo19.png",
+            "38": "icons/noweibo76.png"
+        },
+        "default_title": "surf as you want"
+    },
+    "icons": {
+
+        "16": "icons/noweibo16.png",
+        "19": "icons/noweibo19.png",
+        "38": "icons/noweibo76.png",
+        "48": "icons/noweibo48.png",
+        "128": "icons/noweibo128.png"
+
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": ["http://*.weibo.com/*", "tabs", "storage"],
+    "content_scripts": [{
+        "css": ["noweibo.css"],
+        "js": ["noweibo.js"],
+        "matches": ["http://*.weibo.com/*"]
+    }]
+}
